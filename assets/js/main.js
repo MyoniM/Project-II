@@ -7,7 +7,8 @@ var map = new mapboxgl.Map({
 	container: 'map',
 	style: 'mapbox://styles/mapbox/dark-v10',
 	zoom: 2,
-	center: [0, 0],
+	minZoom: 2,
+	center: [38, 9],
 });
 
 //to give the marker d/t color for d/t amount of cases
@@ -28,10 +29,16 @@ fetch('https://corona.lmao.ninja/v2/countries?sort=country')
 		data.forEach((country) => {
 			const { lat, long } = country['countryInfo'];
 			const cases = country['cases'];
+
+			//create onclick popup
+			var popup = new mapboxgl.Popup({ offset: 25 }).setText(cases);
+
 			new mapboxgl.Marker({
 				color: getFromCount(cases),
 			})
 				.setLngLat([long, lat])
+				.setPopup(popup) // sets a popup on this marker
+
 				.addTo(map);
 		});
 	});

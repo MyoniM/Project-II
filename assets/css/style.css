@@ -1,0 +1,16 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+#map {
+    width: 100vw;
+    height: 100vh;
+}
+
+
+.mapboxgl-popup {
+    background-color: transparent;
+    max-width: 300px;
+}

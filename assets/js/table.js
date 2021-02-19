@@ -1,7 +1,6 @@
 import data from './api.js';
 
 data().then((data_) => {
-	console.log(data_[0]);
 	$('#table_id').DataTable({
 		data: data_,
 		columns: [
@@ -17,4 +16,3 @@ data().then((data_) => {
 		],
 	});
 });
-console.log(data());

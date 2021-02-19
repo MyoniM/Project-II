@@ -9,8 +9,26 @@
     height: 100vh;
 }
 
+#marker {
+    width: 50px;
+    height: 50px;
+    border-radius: 50%;
+    cursor: pointer;
+}
 
 .mapboxgl-popup {
     background-color: transparent;
     max-width: 300px;
+}
+
+#case {
+    color: blue;
+}
+
+#death {
+    color: red;
+}
+
+#recovered {
+    color: green;
 }

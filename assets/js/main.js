@@ -26,19 +26,38 @@ fetch('https://corona.lmao.ninja/v2/countries?sort=country')
 	.then((response) => response.json())
 	//used .then again b/c response.json also returns a promise
 	.then((data) => {
-		data.forEach((country) => {
-			const { lat, long } = country['countryInfo'];
-			const cases = country['cases'];
+		data.forEach((Country) => {
+			const { lat, long } = Country['countryInfo'];
+			const { country, cases, deaths, recovered } = Country;
+			//create marker
+			const marker = new mapboxgl.Marker({
+				color: getFromCount(cases),
+			}).setLngLat([long, lat]);
+
+			// get the marker element
+			const element = marker.getElement();
+			element.id = 'marker';
 
 			//create onclick popup
-			var popup = new mapboxgl.Popup({ offset: 25 }).setText(cases);
+			var popup = new mapboxgl.Popup({ offset: 25 }).setHTML(
+				'<h3>' +
+					country +
+					'</h3><p id="case">' +
+					cases +
+					'</p><p id="death">' +
+					deaths +
+					'</p><p id="recovered">' +
+					recovered +
+					'</p>'
+			);
 
-			new mapboxgl.Marker({
-				color: getFromCount(cases),
-			})
-				.setLngLat([long, lat])
-				.setPopup(popup) // sets a popup on this marker
+			// hover event listener
+			element.addEventListener('mouseenter', () => popup.addTo(map));
+			element.addEventListener('mouseleave', () => popup.remove());
 
-				.addTo(map);
+			// add popup to marker
+			marker.setPopup(popup);
+			// add marker to map
+			marker.addTo(map);
 		});
 	});

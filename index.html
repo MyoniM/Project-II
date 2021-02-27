@@ -4,7 +4,9 @@
 		<meta charset="UTF-8" />
 		<meta http-equiv="X-UA-Compatible" content="IE=edge" />
 		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
+		<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
+		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
 		<link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/style.css" />
 		<title>Covid live</title>
@@ -15,12 +17,58 @@
 			
 			<h1>Header</h1>
 		</div>
-		<div style="height: 30rem; width: 50rem; margin-left: 100px;" id="map"></div>
+
+		<div class="row">
+
+		<div class="Ethiopia">
+
+			<div class="">
+					<h1 >Covid info for Ethipia</h1>
+			</div>
+
+			<div>
+				<table class="table table-hover" >
+					<tbody>
+						<th scope="row">New Cases:</th>
+							<td id="enew-cases"> </td>
+						</tr>
+						<tr>
+						<th scope="row">New Deaths:</th>
+								<td id="enew-deaths"> </td>
+						</tr>
+						<tr>
+							<th scope="row">Total Cases:</th>
+							   <td id="etotal-cases"> </td>
+						</tr>
+						<tr>
+							<th scope="row">Total Deaths:</th>
+							   <td id="etotal-deaths"> </td>
+						   </tr>
+						<tr>
+						<tr>
+							<th scope="row">Total Recovered:</th>
+								<td id="etotal-recovered"> </td>
+						</tr>
+						<th scope="row">Serious Critical:</th>
+							<td id="eserious-critical"> </td>
+						</tr>
+						<tr>
+					
+					  
+					</tbody>
+					</table>
+
+			</div>
+
+			</div>
+
+
+			<div style="height: 30rem; width: 50rem; " id="map"></div>
+
+		</div>
 
 		
-		<div class="Ethiopia">
-			
-		</div>
+	
 		
 
 		<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>

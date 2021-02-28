@@ -18,6 +18,7 @@ function displayCaseData(){
         totalCase.innerHTML = data.cases
         totalRecovered.innerHTML = data.recovered
         criticalCase.innerHTML = data.critical
+        // ethopia_container.style.background-image = data.d
         // ethopia_container
         
 	})

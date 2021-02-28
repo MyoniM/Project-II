@@ -7,6 +7,7 @@ let totalDeath = document.querySelector('#etotal-deaths');
 let totalRecovered = document.querySelector('#etotal-recovered');
 let criticalCase = document.querySelector('#eserious-critical');
 const ethopia_container = document.querySelector('.Ethiopia');
+let imgOne = document.querySelector('#imgOne');
 document.addEventListener('DOMContentLoaded' , displayCaseData)
 function displayCaseData(){
 
@@ -18,8 +19,9 @@ function displayCaseData(){
         totalCase.innerHTML = data.cases
         totalRecovered.innerHTML = data.recovered
         criticalCase.innerHTML = data.critical
-        // ethopia_container.style.background-image = data.d
-        // ethopia_container
+    
+        let getBackgroundImage = data.countryInfo.flag;
+        imgOne.style.src = getBackgroundImage;
         
 	})
 

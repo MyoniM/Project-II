@@ -8,6 +8,8 @@ let totalRecovered = document.querySelector('#etotal-recovered');
 let criticalCase = document.querySelector('#eserious-critical');
 const ethopia_container = document.querySelector('.Ethiopia');
 let imgOne = document.querySelector('#imgOne');
+let two = document.querySelector('#Two')
+let three = document.querySelector('#Three')
 document.addEventListener('DOMContentLoaded' , displayCaseData)
 function displayCaseData(){
 
@@ -21,8 +23,12 @@ function displayCaseData(){
         criticalCase.innerHTML = data.critical
     
         let getBackgroundImage = data.countryInfo.flag;
-        imgOne.style.src = getBackgroundImage;
-        
+        // ethopia_container.style.backgroundImage ="url('" + getBackgroundImage + "')";
+        // ethopia_container.style.backgroundRepeat = 'no-repeat'
+        imgOne.src = getBackgroundImage
+        three.src = getBackgroundImage
+        two.src = getBackgroundImage
+
 	})
 
 

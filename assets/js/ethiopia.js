@@ -11,7 +11,6 @@ let three = document.querySelector('#Three');
 document.addEventListener('DOMContentLoaded', displayCaseData);
 function displayCaseData() {
 	getDataForEthiopia().then((data) => {
-		console.log(data);
 		newCase.innerHTML = data.todayCases;
 		newDeath.innerHTML = data.todayDeaths;
 		totalDeath.innerHTML = data.deaths;

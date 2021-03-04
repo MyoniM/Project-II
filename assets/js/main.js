@@ -1,7 +1,6 @@
 import 'https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.js';
 import geoData from './geoLocate.js';
 import api from './api.js';
-
 const mapbox_token = 'pk.eyJ1IjoieW9uaW1lcmtlYnUiLCJhIjoiY2tsM2dsYmsxMW1lNTJzcW8ybDM0eGtnbCJ9._Gb2Fd84O3SO2-LgHIICpw';
 
 mapboxgl.accessToken = mapbox_token;
@@ -64,3 +63,17 @@ var getFromCount = (count) => {
 	}
 	return 'grey';
 };
+
+// const ethopia_container = document.querySelector('.Ethiopia');
+// document.addEventListener('DOMContentLoaded' , displayCaseData)
+// function displayCaseData(){
+
+// 	getDataForEthiopia().then((data)=>{
+// 		data.forEach((value)=>{
+// 			console(value)
+// 		})
+// 	})
+
+
+
+// }

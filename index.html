@@ -7,11 +7,12 @@
 		<link rel="stylesheet" href="https://bootswatch.com/4/litera/bootstrap.min.css">
 		<link href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" rel="stylesheet" integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+		<link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.23/css/jquery.dataTables.css" />
+
 		<link href="https://api.mapbox.com/mapbox-gl-js/v2.1.1/mapbox-gl.css" rel="stylesheet" />
 		<link rel="stylesheet" href="assets/css/style.css" />
 		<title>Covid live</title>
 		<link rel="stylesheet" href="./assets/css/table.css">
-		<link rel="stylesheet" href="./assets/css/style.css">
 		<style>
 			@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
 			@import url('https://fonts.googleapis.com/css2?family=Anton&family=Lobster&display=swap');
@@ -19,22 +20,20 @@
 	</head>
 	<body>
 
-		<div style="background-color: aqua;">
+		<div class="container ">
 			
-			<h1 style="font-family: 'Anton', sans-serif;margin-left: 25rem;padding: 2rem;">NovelCovid Information </h1>
+			<h1 id="head" style="font-family: 'Anton', sans-serif;">NovelCovid Information </h1>
 		</div>
 	
-		<div class="row">
+	<div class="row">
 
-		<div  style="margin-left: 15px;" class="Ethiopia" >
+		<div class="container" >
 
 			<div class="">
 					<h1 style="font-family: 'Anton', sans-serif;
 					font-family: 'Lobster', cursive;">Covid info for Ethiopia</h1>
 			</div>
 			<img style="height: 1rem;width: 1rem;margin-left: 30px;" id="imgOne" src="" alt="">
-			<img style="height: 1rem;width: 1rem;margin-left: 120px;" id="Two" src="" alt="">
-			<img style="height: 1rem;width: 1rem;margin-left: 120px;" id="Three" src="" alt="">
 
 
 
@@ -62,32 +61,36 @@
 							<th scope="row">Total Recovered:</th>
 								<td id="etotal-recovered"> </td>
 						</tr>
-						<th scope="row">Serious Critical:</th>
+						<th scope="row">Serious condition:</th>
 							<td id="eserious-critical"> </td>
 						</tr>
 						<tr>
 					
 					  
 					</tbody>
-					</table>
+				</table>
+
+				<canvas id="line-chart"	style="display: block; width: 752px; height: 423px;"
+			></canvas>
 
 			</div>
 
 			</div>
 
 
-			<div style="height: 30rem; width: 50rem;margin-left: 140px; " id="map"></div>
+			<div id="map"></div>
 
 		</div>
 
 
-		<div class="">
-			<h1 style="font-family: 'Anton', sans-serif;
-			font-family: 'Lobster', cursive;">All Country Case</h1>
-	</div>
 		
-
+	</div>
 		<div class="container">
+			<div class="">
+				<h1 class="head">World wide cases</h1>
+				</div>
+
+			<div class="container container-t">
 			<table class="display" width="100%" id="table_id">
 				<thead>
 					<tr>
@@ -109,16 +112,21 @@
 
 
 
+		<div class="container chart">
+			
+		</div>
 	
 
-		<div>
-				<h3 style="height: rem;text-align: center;padding: 2rem;background-color: cadetblue;"  >&copy 2021 developed by yondah</h3>
+		<div id="foot">
+				<h3 class="head" >&copy 2021 developed by yondah</h3>
 		</div>
 		
 
 
+		<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"></script>	
 
-		<script
+		<script src="assets/js/chart.js"></script>
+	<script
 		src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.bundle.min.js"
 		integrity="sha384-b5kHyXgcpbZJO/tY9Ul7kGkf1S0CWuKcCD38l8YkeH8z8QjE0GmW1gYU5S9FOnJ0"
 		crossorigin="anonymous"
@@ -136,7 +144,7 @@
 	<script type="module" src="assets/js/table.js"></script>
 
 		<script language="JavaScript" src="http://www.geoplugin.net/javascript.gp" type="text/javascript"></script>
-		<script type="module" src="./assets/js/ethiopia.js"></script>
+		<script src="./assets/js/ethiopia.js"></script>
 		<script src="./assets/js/ethioApi.js"></script>
 		<script type="module" src="./assets/js/main.js"></script>
 		<script type="module" src="./assets/js/geoLocate.js"></script>

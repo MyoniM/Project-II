@@ -4,9 +4,14 @@
     box-sizing: border-box;
 }
 
+body {
+    overflow: ;
+}
+
 #map {
     width: 100vw;
-    height: 100vh;
+    height: 60vh;
+    margin: 4% 0;
 }
 
 #marker {
@@ -31,4 +36,17 @@
 
 #recovered {
     color: green;
+}
+
+#head {
+    width: 50%;
+    margin: 4% auto;
+}
+
+#foot {
+    margin: 4% 0;
+}
+
+.chart {
+    height: 50%;
 }
